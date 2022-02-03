@@ -3,7 +3,7 @@ jobs:
   build:
     docker: 
       - image: python:3.8-slim-buster
-      steps:
+    steps:
       - checkout
       - setup_remote_docker:
       - run: |
