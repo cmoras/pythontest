@@ -4,7 +4,7 @@ jobs:
     docker: 
       - image: python:3.8-slim-buster
     steps:
-      - checkout
+      - checkout:
       - setup_remote_docker:
       - run: |
          echo "this is first phase -  CI and build essentially"
