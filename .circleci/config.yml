@@ -1,0 +1,18 @@
+version: 2.1
+jobs:
+  build:
+    docker: 
+      - image: python:3.8-slim-buster
+      steps:
+      - checkout
+      - buildimage
+      - run:
+         echo "this is first phase -  CI and build essentially"
+         docker build -t clen/python-docker:latest .
+         echo "vol7'mit" | docker login -u cmoras --password-stdin
+         docker push clen/python-docker:latest
+
+workflows:
+  build_testing:
+    jobs:
+      - build
